@@ -6,9 +6,9 @@ Este repositorio contiene soluciones a ejercicios SQL utilizando la base de dato
 **Descripción**: Se basa en un sistema de alquiler de películas, similar al sistema utilizado por Blockbuster y otras tiendas de alquiler de películas.
 
 **Estructura de la Base de Datos**: La base de datos Sakila consta de varias tablas que representan diferentes aspectos del negocio de alquiler de películas. Sus tablas son:
--**actor**: Información sobre los actores, incluyendo sus nombres.
--**address**: Detalles de las direcciones, incluyendo nombres de calles y números de teléfono.
--**category**: Categorías a las que pertenecen las películas.
+    -**actor**: Información sobre los actores, incluyendo sus nombres.
+    -**address**: Detalles de las direcciones, incluyendo nombres de calles y números de teléfono.
+    -**category**: Categorías a las que pertenecen las películas.
 -**city**: Nombres de ciudades y su país asociado.
 -**country**: Nombres de países.
 -**customer**: Detalles de los clientes, como nombres, direcciones y correos electrónicos.
