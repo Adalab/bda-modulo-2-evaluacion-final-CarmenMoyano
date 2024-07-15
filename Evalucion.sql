@@ -86,7 +86,7 @@ SELECT a.first_name AS nombre_actor, a.last_name AS apellido_actor
     WHERE f.title = 'Indian Love';
     
 -- 14. Muestra el título de todas las películas que contengan la palabra "dog" o "cat" en su descripción.
-SELECT title AS títilo_película, description
+SELECT f.title AS títilo_película, f.description
     FROM film AS f
     WHERE description LIKE '%dog%' OR description LIKE '%cat%';
     
@@ -103,12 +103,12 @@ SELECT COUNT(DISTINCT actor_id)
 from film_actor;
 
 -- 16. Encuentra el título de todas las películas que fueron lanzadas entre el año 2005 y 2010
-SELECT title AS tÍtulo_pelÍcula
+SELECT f.title AS tÍtulo_pelÍcula
     FROM film AS f
-    WHERE release_year BETWEEN 2005 AND 2010;
+    WHERE f.release_year BETWEEN 2005 AND 2010;  
 
 -- 17. Encuentra el título de todas las películas que son de la misma categoría que "Family".
-SELECT title AS tÍtulo_pelÍcula
+SELECT f.title AS tÍtulo_pelÍcula
     FROM film AS f
     INNER JOIN film_category AS fc
     USING (film_id)
@@ -130,7 +130,7 @@ SELECT title AS titulo_pelicula
     WHERE f.rating = 'R' AND f.length > 120;
 
 -- 20. Encuentra las categorías de películas que tienen un promedio de duración superior a 120 minutos y muestra el nombre de la categoría junto con el promedio de duración.
-SELECT name AS categoría_película, AVG(length) AS promedio_duración
+SELECT c.name AS categoría_película, AVG(f.length) AS promedio_duración
     FROM category AS c
     INNER JOIN film_category AS fc
     USING (category_id)
@@ -159,7 +159,7 @@ SELECT DISTINCT f.title AS titulo_pelicula
                         WHERE DATEDIFF(r.return_date, r.rental_date) > 5);
                                
 -- 23. Encuentra el nombre y apellido de los actores que no han actuado en ninguna película de la categoría "Horror". Utiliza una subconsulta para encontrar los actores que han actuado en películas de la categoría "Horror" y luego exclúyelos de la lista de actores.
-SELECT first_name AS nombre_actor, last_name AS apellido_actor
+SELECT a.first_name AS nombre_actor, a.last_name AS apellido_actor
     FROM actor AS a
     WHERE a.actor_id NOT IN (SELECT DISTINCT actor_id
                             FROM actor AS a
@@ -174,7 +174,7 @@ SELECT first_name AS nombre_actor, last_name AS apellido_actor
                             WHERE c.name = 'Horror');
 
 -- 24. BONUS: Encuentra el título de las películas que son comedias y tienen una duración mayor a 180 minutos en la tabla film.
-SELECT f.title AS titulo_película, c.name, f.length
+SELECT f.title AS titulo_película
     FROM film AS f
     INNER JOIN film_category AS fc
     USING (film_id)
