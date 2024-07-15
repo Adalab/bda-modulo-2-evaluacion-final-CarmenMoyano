@@ -3,7 +3,9 @@ Este repositorio contiene soluciones a ejercicios SQL utilizando la base de dato
 # Base de Datos:
 **Nombre de la Base de Datos**: Sakila
 
+
 **Descripción**: Se basa en un sistema de alquiler de películas, similar al sistema utilizado por Blockbuster y otras tiendas de alquiler de películas.
+
 
 **Estructura de la Base de Datos**: La base de datos Sakila consta de varias tablas que representan diferentes aspectos del negocio de alquiler de películas. Sus tablas son:
 
@@ -38,6 +40,7 @@ Este repositorio contiene soluciones a ejercicios SQL utilizando la base de dato
 **store**: Datos sobre las tiendas, incluyendo los gerentes y direcciones.
 
 
+
 **Estructura del Proyecto**
 
 **evaluacion.sql**: Archivo que contiene todas las consultas SQL resueltas.
@@ -48,6 +51,7 @@ Este repositorio contiene soluciones a ejercicios SQL utilizando la base de dato
 
 **detalle-bbdd-sakila.md**: Archivo con inforamción detallada de cada una de las tablas.
     
+
 **Requisitos**:
 
 MySQL Workbench o cualquier gestor de bases de datos SQL compatible.
