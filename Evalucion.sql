@@ -91,7 +91,39 @@ SELECT title AS títilo_película, description
     WHERE description LIKE '%dog%' OR description LIKE '%cat%';
     
 -- 15. Hay algún actor o actriz que no apareca en ninguna película en la tabla film_actor.
-SELECT actor_id
-    FROM film_actor
-    WHERE 
+SELECT a.first_name AS nombre_actor_sin_pelicula
+    FROM actor AS a    
+    LEFT JOIN film_actor AS fa
+    USING (actor_id )
+    WHERE fa.actor_id IS NULL;
+
+-- 16. Encuentra el título de todas las películas que fueron lanzadas entre el año 2005 y 2010.
+SELECT title AS tÍtulo_pelÍcula
+    FROM film AS f
+    WHERE release_year BETWEEN 2005 AND 2010;
+
+-- 17. Encuentra el título de todas las películas que son de la misma categoría que "Family".
+SELECT title AS tÍtulo_pelÍcula
+    FROM film AS f
+    INNER JOIN film_category AS fc
+    USING (film_id)
+    INNER JOIN category AS c
+    USING (category_id)
+    WHERE c.name = 'Family';
+
+-- 18. Muestra el nombre y apellido de los actores que aparecen en más de 10 películas.
+SELECT first_name AS nombre_actor, last_name AS apellido_actor
+    FROM actor AS a
+    INNER JOIN film_actor AS fa
+    USING (actor_id)
+    GROUP BY fa.actor_id
+    HAVING COUNT(fa.film_id) > 10;
+
+-- 19. Encuentra el título de todas las películas que son "R" y tienen una duración mayor a 2 horas en la tabla film.
+
+
+   
     
+
+
+
